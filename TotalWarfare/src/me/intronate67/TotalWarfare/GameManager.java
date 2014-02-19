@@ -311,7 +311,7 @@ public class GameManager {
 		Game game = new Game(no);
 		games().add(game);
 		StatsManager.getInstance().addArena(no);
-		//SurvivalGames.$("game added "+ games().size()+" "+SettingsManager.getInstance().getSystemConfig().getInt("gs-system.arenano"));
+		
 	}
 
 	public void hotRemoveArena(int no) {
