@@ -3,24 +3,32 @@ package me.intronate67.TotalWarfare.commands;
 import me.intronate67.TotalWarfare.MessageManager;
 import me.intronate67.TotalWarfare.MessageManager.PrefixType;
 import me.intronate67.TotalWarfare.SettingsManager;
-import me.intronate67.TotalWarfare.TotalWarfare;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.bukkit.selections.Selection;
 
 public class SetCapture implements SubCommand{
-	private TotalWarfare p;
+	WorldEditPlugin getWorldEdit() {
+		Plugin worldEdit = Bukkit.getServer().getPluginManager().getPlugin("WorldEdit");
+		if (worldEdit instanceof WorldEditPlugin) {
+			return (WorldEditPlugin) worldEdit;
+		} else {
+			return null;
+		}
+	}
 	public boolean onCommand(Player pl, String[] args){
 		FileConfiguration c = SettingsManager.getInstance().getSpawns();
 		//SettingsManager s = SettingsManager.getInstance();
 		String no;
 		MessageManager msgmgr = MessageManager.getInstance();
-		WorldEditPlugin we = p.getWorldEdit();
+		WorldEditPlugin we = getWorldEdit();
 		Selection sel = we.getSelection(pl);
 		if (sel == null) {
 			msgmgr.sendMessage(PrefixType.WARNING, "You must make a WorldEdit Selection first!", pl);
