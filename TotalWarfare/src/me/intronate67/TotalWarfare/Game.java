@@ -7,7 +7,6 @@ import java.util.HashMap;
 import me.intronate67.TotalWarfare.MessageManager.PrefixType;
 import me.intronate67.TotalWarfare.api.PlayerJoinArenaEvent;
 import me.intronate67.TotalWarfare.api.PlayerKilledEvent;
-import me.intronate67.TotalWarfare.api.PlayerLeaveArenaEvent;
 import me.intronate67.TotalWarfare.hooks.HookManager;
 import me.intronate67.TotalWarfare.logging.QueueManager;
 import me.intronate67.TotalWarfare.stats.StatsManager;
@@ -531,8 +530,6 @@ public class Game {
 		}
 
 		HookManager.getInstance().runHook("PLAYER_REMOVED", "player-"+p.getName());
-
-		PlayerLeaveArenaEvent pl = new PlayerLeaveArenaEvent(p, this, b);
 
 		LobbyManager.getInstance().updateWall(gameID);
 	}
