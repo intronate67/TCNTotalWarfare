@@ -46,7 +46,7 @@ public class SetCapture implements SubCommand{
 				MessageManager.getInstance().sendFMessage(MessageManager.PrefixType.ERROR, "error.nopermission", pl);
 	            return true;
 			}
-			SettingsManager.getInstance().getSpawns().set(("spawns." + no), null);
+			SettingsManager.getInstance().getSpawns().set(("spawns." + "capture"), null);
 			c.set("spawns." + no + ".capture" + ".world", max.getWorld().getName());
 			c.set("spawns." + no + ".capture" + ".x1", max.getBlockX());
 			c.set("spawns." + no + ".capture" +  ".y1", max.getBlockY());
