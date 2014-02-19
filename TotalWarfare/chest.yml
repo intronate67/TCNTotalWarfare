@@ -1,0 +1,23 @@
+# <itemid>,<max amount per slot>
+
+#DONT TOUCH THIS
+version: 0
+
+chest:
+  ratio: 10
+  lvl1:
+  - 266,1
+  lvl2:
+  - 266,1
+  lvl3:
+  - 266,1
+  lvl4:
+  - 266,1
+  lvl5:
+  - 266,1
+
+
+  
+  
+  
+  

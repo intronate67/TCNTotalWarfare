@@ -1,0 +1,11 @@
+name: TotalWarfare
+version: 1.3
+main: me.intronate67.TotalWarfare.TotalWarfare
+authors: [intronate67]
+description: TotalWafare plugin for GuildHub Minecraft Server.
+
+commands:
+    totalwarfare:
+        description: TotalWarfare Command
+        usage: /<command> <args>
+        aliases: [tw, totalwarfare]
