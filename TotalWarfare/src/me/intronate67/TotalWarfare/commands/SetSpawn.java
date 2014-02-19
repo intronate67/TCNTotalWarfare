@@ -47,10 +47,6 @@ public class SetSpawn implements SubCommand{
         if(args[0].equalsIgnoreCase("demons") == false && args[0].equalsIgnoreCase("heroes") == false){
         	MessageManager.getInstance().sendMessage(MessageManager.PrefixType.WARNING, "Team: " + args[0] + " does not exist!", player);
         }
-        if(game == -1){
-            MessageManager.getInstance().sendMessage(MessageManager.PrefixType.ERROR, "error.notinarena", player);
-            return true;
-        }
         SettingsManager.getInstance().setSpawn(game, teamSpawn, l);
         
         MessageManager.getInstance().sendFMessage(MessageManager.PrefixType.INFO, "info.spawnset", player, "num-" + teamSpawn, "arena-" + game);
