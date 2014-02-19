@@ -55,7 +55,7 @@ public class SetCapture implements SubCommand{
 			c.set("spawns." + no + ".capture" +  ".y2", min.getBlockY());
 			c.set("spawns." + no + ".capture" +  ".z2", min.getBlockZ());
 		}
-		return false;
+		return true;
 	}
 	
 	
