@@ -33,13 +33,7 @@ public class ForceStart implements SubCommand {
 			MessageManager.getInstance().sendFMessage(PrefixType.ERROR, "error.notingame", player);
 			return true;
 		}
-
-
 		Game g = GameManager.getInstance().getGame(game);
-		if (g.getMode() != Game.GameMode.WAITING && !player.hasPermission("tw.arena.restart")) {
-			MessageManager.getInstance().sendFMessage(PrefixType.ERROR, "error.alreadyingame", player);
-			return true;
-		}
 		g.countdown(seconds);
 
 		msgmgr.sendFMessage(PrefixType.INFO, "game.started", player, "arena-" + game);
