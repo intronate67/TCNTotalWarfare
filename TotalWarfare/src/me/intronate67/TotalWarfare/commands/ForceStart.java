@@ -18,7 +18,7 @@ public class ForceStart implements SubCommand {
 			MessageManager.getInstance().sendFMessage(PrefixType.ERROR, "error.nopermission", player);
 			return true;
 		}
-		int game = -1;
+		int game;
 		int seconds = 10;
 		if(args.length == 2){
 			seconds = Integer.parseInt(args[1]);
@@ -28,11 +28,12 @@ public class ForceStart implements SubCommand {
 
 		}
 		else
-			game  = GameManager.getInstance().getPlayerGameId(player);
+			game = GameManager.getInstance().getPlayerGameId(player);
 		if(game == -1){
 			MessageManager.getInstance().sendFMessage(PrefixType.ERROR, "error.notingame", player);
 			return true;
 		}
+		game = Integer.parseInt(args[0]);
 		Game g = GameManager.getInstance().getGame(game);
 		g.countdown(seconds);
 

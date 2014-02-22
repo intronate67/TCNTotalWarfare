@@ -25,12 +25,12 @@ import com.sk89q.worldedit.bukkit.selections.Selection;
 public class GameManager {
 
 	static GameManager instance = new GameManager();
-	public ArrayList < Game > games(){
+	public ArrayList <Game> games(){
 		ArrayList<Game>  game = new ArrayList < Game > ();
 		return game;
 	}
 	private TotalWarfare p;
-	public static HashMap < Integer, HashSet < Block >> openedChest = new HashMap < Integer, HashSet < Block >> ();
+	public static HashMap <Integer, HashSet <Block>> openedChest = new HashMap <Integer, HashSet <Block>>();
 	private ArrayList<Kit>kits = new ArrayList<Kit>();
 	private HashSet<Player>kitsel = new HashSet<Player>();
 	MessageManager msgmgr = MessageManager.getInstance();
@@ -187,7 +187,7 @@ public class GameManager {
 
 	public Game getGame(int a) {
 		//int t = gamemap.get(a);
-		for (Game g: games()) {
+		for (Game g : games()) {
 			if (g.getID() == a) {
 				return g;
 			}
